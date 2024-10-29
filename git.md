@@ -1,4 +1,6 @@
-## Using alternate SSH identity file in git command
+## Global configuration
+
+### Using alternate SSH identity file in git command
 
 By default git command uses $HOME/.ssh/id_rsa for private key identity file. There may be such circumstances that require you to have private key files different from the default name. The command below will add `sshCommand` entry to `.git/config` and allow git command to use the specify identity file.
 
@@ -14,4 +16,20 @@ Host github.com
 
 Host localgit.localdomain
   IdentityFile ~/.ssh/id_rsa.local
+```
+
+## Differentiation
+
+### Diff specific file 
+
+- Using branch
+
+```
+git diff origin/master -- README.md
+```
+
+- Using commit hash
+
+```
+git diff 1ca5ea86fa6838034f1b3fcb7c7b915774242900 -- README.md
 ```
