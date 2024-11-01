@@ -2,6 +2,8 @@
 
 All notes for all works done on Linux
 
-|Note|Description|
+## Commands
+
+|Command|Description|
 |----|---|
-|git.md|Git commands|
+|||
