@@ -1,12 +1,19 @@
-## Substitute environment variable in a file. 
+### Substitute environment variable in a file. 
 
 ```
-$cat somefileint.yml
+unset VALUE
+cat > /tmp/somefilein.yml <<EOF
 key: "${VALUE}"
+EOF
 
-$export VALUE="the value"
+export VALUE="the value"
 
-$envsubst <somefilein.yml > /tmp/somefileout.yml
-$cat /tmp/somefileout.yml
+envsubst </tmp/somefilein.yml > /tmp/somefileout.yml
+cat /tmp/somefileout.yml
+```
+
+The placeholder `${VALUE}` now has been substitued
+
+```
 key: "the value"
 ```
