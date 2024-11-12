@@ -32,3 +32,9 @@ line #8
 line #9
 line #10
 ```
+
+### Delete line that matches regex
+
+```
+sed -i '/^127.0.0.1$/d' /home/ansible/.ssh/known_hosts
+```
