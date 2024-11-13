@@ -10,7 +10,7 @@ kubectl get all -l "env in (prod)"
 - Adding the option `-o wide` to the command to see more details.
 - Adding the option `-o yaml` to render yaml definition of the resource.
 - Adding the option `-n <namespace>` or `--namespace <namespace>` to choose specific namespace.
-- Adding the option `--all-namespaces` to include resources from all namespaces.
+- Adding the option `--all-namespaces` or `-A` to include resources from all namespaces.
 
 |Command|Alternative|Description|
 |----|-----|-----|
@@ -37,3 +37,5 @@ kubectl get all -l "env in (prod)"
 |kubectl drain \<node name\>||Migrate running pods on the node to other nodes and stop it from the scheduling new pods|
 |kubectl cordon \<node name\>||Stop the node from scheduling new pods|
 |kubectl uncordon \<node name\>||Enable the node for scheduling new pods|
+|kubectl config current-context||Display the name of current context|
+|kubectl config use-context \<context name\>||Switch to the specified context|
