@@ -26,6 +26,7 @@ kubectl get all -l "env in (prod)"
 |kubectl get rolebindings||List role bindings|
 |kubectl get clusterroles||List cluster roles|
 |kubectl get clusterrolebindings||List cluster role bindings|
+|kubectl get storageclass|kubectl get sc||List storage classes|
 |kubectl get persistentvolumes|kubectl get pv|List persistent volumes|
 |kubectl get persistentvolumeclaims|kubectl get pvc|List persistent volume claims|
 |kubectl get configmaps||List configmaps|
