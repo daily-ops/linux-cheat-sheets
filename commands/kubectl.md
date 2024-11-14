@@ -19,7 +19,7 @@ kubectl get all -l "env in (prod)"
 |kubectl run --image \<image\>[\<:tag\>] <name>||Run a new pod with the name from specified image|
 |kubectl delete \<resource type\> \<resource name\>||Delete the resource| 
 |kubectl get pods||List pods |
-|kubectl get deployments||List deployments|
+|kubectl get deployments|kubectl get deploy|List deployments|
 |kubectl get services||List services|
 |kubectl get serviceaccount|kubectl get sa|List service accounts|
 |kubectl get roles||List roles|
