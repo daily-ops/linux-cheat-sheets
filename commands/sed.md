@@ -38,3 +38,21 @@ line #10
 ```
 sed -i '/^127.0.0.1$/d' /home/ansible/.ssh/known_hosts
 ```
+
+### Delete 1st line:
+
+```
+sed '1d' file-name
+```
+
+### Delete 10th line:
+
+```
+sed '10d' file-name
+```
+
+### Delete line # 5 to 10
+
+```
+sed '5,10d' file-name
+```
