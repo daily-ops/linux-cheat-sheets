@@ -41,3 +41,4 @@ kubectl get all -l "env in (prod)"
 |kubectl uncordon \<node name\>||Enable the node for scheduling new pods|
 |kubectl config current-context||Display the name of current context|
 |kubectl config use-context \<context name\>||Switch to the specified context|
+|kubectl replace --force -f \<file\>||Force replacing the resources, i.e. delete and recreate|
