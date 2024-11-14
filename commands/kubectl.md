@@ -11,6 +11,7 @@ kubectl get all -l "env in (prod)"
 - Adding the option `-o yaml` to render yaml definition of the resource.
 - Adding the option `-n <namespace>` or `--namespace <namespace>` to choose specific namespace.
 - Adding the option `--all-namespaces` or `-A` to include resources from all namespaces.
+- Adding the option `--show-labels` to display the configured labels on the resources.
 
 |Command|Alternative|Description|
 |----|-----|-----|
@@ -30,6 +31,7 @@ kubectl get all -l "env in (prod)"
 |kubectl get configmaps||List configmaps|
 |kubectl get secrets||List secrets|
 |kubectl get ingress||List ingresses|
+|kubectl get networkpolicies||List network policies|
 |kubectl api-resources||List resources with corresponding API versions|
 |kubectl get certificatesigningrequests|kubectl get csr|List certificate signing requests|
 |kubectl certificate approve \<name\>||Approve certificate signing request|
