@@ -43,3 +43,8 @@ kubectl get all -l "env in (prod)"
 |kubectl config current-context||Display the name of current context|
 |kubectl config use-context \<context name\>||Switch to the specified context|
 |kubectl replace --force -f \<file\>||Force replacing the resources, i.e. delete and recreate. Also useful when edit the resource in-place|
+
+### Shothand kubectl commands to create resource definitions as template
+
+- `kubectl create deployment test -n default --dry-run=client --image=nginx -o yaml`
+- `kubectl create service nodeport test -n default --dry-run=client --tcp=8080:8282 -o yaml`
