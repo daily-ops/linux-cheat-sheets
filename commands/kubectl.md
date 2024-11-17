@@ -47,4 +47,4 @@ kubectl get all -l "env in (prod)"
 ### Shothand kubectl commands to create resource definitions as template
 
 - `kubectl create deployment test -n default --dry-run=client --image=nginx -o yaml`
-- `kubectl create service nodeport test -n default --dry-run=client --tcp=8080:8282 -o yaml`
+- `kubectl create service nodeport test -n default --dry-run=client --tcp=8080:8282 --node-port=30080 -o yaml`
