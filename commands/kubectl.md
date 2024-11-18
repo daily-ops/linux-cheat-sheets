@@ -51,3 +51,7 @@ kubectl get all -l "env in (prod)"
 - `kubectl create deployment test -n default --dry-run=client --image=nginx -o yaml`
 - `kubectl create service nodeport test -n default --dry-run=client --tcp=8080:8282 --node-port=30080 -o yaml`
 - `kubectl create service clusterip redis-service --tcp=6379:6379 --dry-run=client -o yaml`
+
+### Deployments
+
+- `kubectl set image deployment frontend simple-webapp=kodekloud/webapp-color:v2`
