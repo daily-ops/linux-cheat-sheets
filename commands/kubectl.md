@@ -30,7 +30,7 @@ kubectl get all -l "env in (prod)"
 |kubectl get storageclass|kubectl get sc||List storage classes|
 |kubectl get persistentvolumes|kubectl get pv|List persistent volumes|
 |kubectl get persistentvolumeclaims|kubectl get pvc|List persistent volume claims|
-|kubectl get configmaps||List configmaps|
+|kubectl get configmaps|kubectl get cm|List configmaps|
 |kubectl get secrets||List secrets|
 |kubectl get ingress||List ingresses|
 |kubectl get networkpolicies||List network policies|
