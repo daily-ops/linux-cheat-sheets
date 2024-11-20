@@ -56,6 +56,7 @@ kubectl get all -l "env in (prod)"
 ### Deployments
 
 - `kubectl set image deployment frontend simple-webapp=kodekloud/webapp-color:v2`
+- `kubectl create secret docker-registry private-reg-cred --docker-server myprivateregistry.com:5000 --docker-username dock_user --docker-password dock_password --docker-email dock_user@myprivateregistry.com`
 
 ### Roles
 
