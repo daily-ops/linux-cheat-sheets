@@ -61,4 +61,6 @@ kubectl get all -l "env in (prod)"
 
 - `kubectl create role developer --verb="list,create,delete" --resource="pod" `
 - `kubectl create rolebinding dev-user-binding --user=dev-user --role=dev-user-binding`
+- `kubectl create clusterrole nodes --verb="get,watch,list,create,delete" --resource="nodes"`
+- `kubectl create clusterrolebinding nodes --clusterrole=nodes --user="michelle"`
 
