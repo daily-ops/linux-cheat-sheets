@@ -12,6 +12,7 @@ kubectl get all -l "env in (prod)"
 - Adding the option `-n <namespace>` or `--namespace <namespace>` to choose specific namespace.
 - Adding the option `--all-namespaces` or `-A` to include resources from all namespaces.
 - Adding the option `--show-labels` to display the configured labels on the resources.
+- Adding the option `--no-headers` to suppress headers in the output, add a little convenience when counting rows, i.e. `wc -l`.
 
 |Command|Alternative|Description|
 |----|-----|-----|
