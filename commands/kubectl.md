@@ -56,3 +56,9 @@ kubectl get all -l "env in (prod)"
 ### Deployments
 
 - `kubectl set image deployment frontend simple-webapp=kodekloud/webapp-color:v2`
+
+### Roles
+
+- `kubectl create role developer --verb="list,create,delete" --resource="pod" `
+- `kubectl create rolebinding dev-user-binding --user=dev-user --role=dev-user-binding`
+
