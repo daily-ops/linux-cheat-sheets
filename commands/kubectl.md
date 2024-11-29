@@ -65,3 +65,8 @@ kubectl get all -l "env in (prod)"
 - `kubectl create clusterrole nodes --verb="get,watch,list,create,delete" --resource="nodes"`
 - `kubectl create clusterrolebinding nodes --clusterrole=nodes --user="michelle"`
 
+### Custom queries
+
+|Query|Command|Comment|
+|---|----|---|
+|List lables|kubectl get nodes node01 -o jsonpath='{.metadata.labels}' \| jq| Substitute nodes to different resource type|
