@@ -70,3 +70,4 @@ kubectl get all -l "env in (prod)"
 |Query|Command|Comment|
 |---|----|---|
 |List lables|kubectl get nodes node01 -o jsonpath='{.metadata.labels}' \| jq| Substitute nodes to different resource type|
+|Get update strategy|kubectl get deployment frontend -o jsonpath='{.spec.strategy}' \| jq||
