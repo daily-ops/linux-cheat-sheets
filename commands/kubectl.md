@@ -18,6 +18,7 @@ kubectl get all -l "env in (prod)"
 |----|-----|-----|
 |kubectl apply -f \<definition file\>||Create or update resources from the definition file|
 |kubectl run --image \<image\>[\<:tag\>] <name>||Run a new pod with the name from specified image|
+|kubectl run pod-5 --image praqma/network-multitool --overrides="{ \"spec\": { \"nodeName\": \"node03\"} }"|| Run a pod with overridden definition|
 |kubectl delete \<resource type\> \<resource name\>||Delete the resource| 
 |kubectl get pods||List pods |
 |kubectl get replicaset|kubectl get rs|List replicaset|
