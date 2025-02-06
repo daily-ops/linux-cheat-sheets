@@ -56,3 +56,9 @@ sed '10d' file-name
 ```
 sed '5,10d' file-name
 ```
+
+### Append path to /etc/environment
+
+```
+sed -i -e "/PATH=\"/ s/\"$/:\/usr\/local\/go\/bin\"/g" /etc/environment
+```
