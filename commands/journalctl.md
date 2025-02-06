@@ -43,3 +43,15 @@ sudo journalctl --vacuum-size=200M
 ```
  journalctl --since "2025-02-05 00:00:00" --until "2025-02-05 20:00:00"
 ```
+
+### Query system boots recorded in journalctl
+
+```
+sudo journalctl --list-boots
+```
+
+Result:
+
+```
+0 c684ffa8750a43adabc093bf3b453824 Tue 2025-02-04 15:29:10 AEDT—Thu 2025-02-06 12:37:16 AEDT
+```
