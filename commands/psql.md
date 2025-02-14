@@ -10,6 +10,16 @@ psql -U <USER> -h <HOST> -p <PORT> -d <DATABASE>
 ALTER SYSTEM SET <property name>=<value>
 ```
 
+### Show system settings
+
+```
+SHOW ALL;
+```
+
+```
+SHOW <property name>;
+```
+
 ### Grant permissions
 
 Super user
