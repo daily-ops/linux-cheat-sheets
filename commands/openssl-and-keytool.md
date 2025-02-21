@@ -1,9 +1,32 @@
+* Generate key with `keytool`
 
+  ```
+  keytool -genkey -alias mykey -keyalg RSA -keystore /path/to/my/keystore
+  ```
+
+* Create certificate request with `keytool`
+
+  ```
+  keytool -certreq -keyalg RSA -alias mykey -file mycertreq.csr -keystore /path/to/my/keystore
+  ```
+
+* Import root with `keytool`
+
+  ```
+  keytool -import -alias root -keystore /path/to/my/keystore -trustcacerts -file /path/to/myca.crt
+  ```
+
+* Import certificate with `keytool`
+
+  ```
+  keytool -import -alias mycert -keystore /path/to/my/keystore -file /path/to/mycert.crt
+  ```
+  
 * Convert certificate and key into pkcs12 bundle.
   
   ```
   openssl pkcs12 -export -in mycert.crt -inkey mykey.key
-                         -out mycert.p12 -name tomcat -CAfile myCA.crt
+                         -out mycert.p12 -name tomcat -CAfile myca.crt
                          -caname root -chain
   ```
 
