@@ -88,6 +88,7 @@ Make tom part of ***team-a***.
 ```
 sudo mkdir /etc/ssh/auth_principals
 echo "team-a" | sudo tee -a /etc/ssh/auth_principals/tom
+echo "team-b" | sudo tee -a /etc/ssh/auth_principals/tom
 ```
 
 #### Update /etc/ssh/sshd_config
