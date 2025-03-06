@@ -75,10 +75,61 @@ sudo ssh-keygen -s ssh_ca -I tom_cruise -n tom -V +30m /ssh/id_rsa.pub
 
 Copy the signed public key ***/ssh/id_rsa-cert.pub*** back to client machine at ***/home/tom/.ssh/id_rsa-cert.pub***.
 
+## Option #2
 
+This option is similar to the first option, however, the access is granted to principals instead of individual user. The differences in the configuration are:
 
+### On the target SSH server
 
+#### Create principal files
 
+Make tom part of ***team-a***.
+
+```
+sudo mkdir /etc/ssh/auth_principals
+echo "team-a" | sudo tee -a /etc/ssh/auth_principals/tom
+```
+
+#### Update /etc/ssh/sshd_config
+
+Add/Update the following entries in ***/etc/ssh/sshd_config***
+
+```
+AuthorizedPrincipalsFile /etc/ssh/auth_principals/%u
+PasswordAuthentication no
+TrustedUserCAKeys /etc/ssh/ssh_ca.pub
+```
+
+Reload and restart SSH service.
+
+```
+sudo systemctl daemon-reload
+sudo systemctl restart ssh
+```
+
+#### Update /etc/ssh/sshd_config
+
+Add/Update the following entries in ***/etc/ssh/sshd_config***
+
+```
+AuthorizedPrincipalsFile /etc/ssh/auth_principals/%u
+PasswordAuthentication no
+TrustedUserCAKeys /etc/ssh/ssh_ca.pub
+```
+
+### On CA server
+
+#### Sign user ssh public key with ssh_ca private key
+
+```
+sudo ssh-keygen -s ssh_ca -I tom_cruise -n team-a,team-b -V +30m /ssh/id_rsa.pub
+```
+- The `-n team-a,team-b` defines the principals to be included.
+- The `-s ssh_ca` is the private key of CA for signing. 
+- The `tom_cruise` is Key ID and will appear in the journal log of SSH service. 
+- The option `+30m` will allow the signed public key to be valid for 30 minutes.
+
+Copy the signed public key ***/ssh/id_rsa-cert.pub*** back to client machine at ***/home/tom/.ssh/id_rsa-cert.pub***.
 
 
 
