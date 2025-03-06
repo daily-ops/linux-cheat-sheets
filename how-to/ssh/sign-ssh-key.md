@@ -68,12 +68,15 @@ Copy ***/home/tom/.ssh/id_rsa.pub*** to ***/ssh/id_rsa.pub*** on CA server.
 ```
 sudo ssh-keygen -s ssh_ca -I tom_cruise -n tom -V +30m /ssh/id_rsa.pub
 ```
-
+- The `-n tom` defines the principal. In this simplest setup, it uses the username.
 - The `-s ssh_ca` is the private key of CA for signing. 
 - The `tom_cruise` is Key ID and will appear in the journal log of SSH service. 
 - The option `+30m` will allow the signed public key to be valid for 30 minutes.
 
 Copy the signed public key ***/ssh/id_rsa-cert.pub*** back to client machine at ***/home/tom/.ssh/id_rsa-cert.pub***.
+
+
+
 
 
 
